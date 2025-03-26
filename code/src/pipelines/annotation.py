@@ -11,6 +11,7 @@ from utils.email_processor import extract_email_data
 class Annotator:
 
     # Regex patterns for entity extraction
+    project_root = Path(__file__).parent.parent.parent
     ENTITY_PATTERNS = {
     "borrower": r"(Borrower|Client|Account Holder)[:\s=]+(.+?)\n",
     "amount": r"(Amount|Total):\s([A-Z]{0,3}\s?\$?\$?\s?[\d,]+)",
@@ -28,7 +29,7 @@ class Annotator:
         }
     
     def __init__(self):
-        with open("code/src/config/paths.yaml") as f:
+        with open("{self.project_root}/src/config/paths.yaml") as f:
             self.paths = yaml.safe_load(f)
 
     def extract_text_from_pdf(self,pdf_path: str) -> str:

@@ -19,16 +19,16 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 warnings.filterwarnings("ignore", category=UserWarning)
 
 class ModelTrainer:
-
+    project_root = Path(__file__).parent.parent.parent
     MODEL_NAME = "en_core_web_lg"
     VALIDATION_SPLIT = 0.2
     EPOCHS = 10
     BATCH_SIZE = 8
     def __init__(self):
-        with open("code/src/config/paths.yaml") as f:
+        with open(f"{self.project_root}/src/config/paths.yaml") as f:
             self.paths = yaml.safe_load(f)
             
-        with open("code/src/config/settings.yaml") as f:
+        with open(f"{self.project_root}/src/config/settings.yaml") as f:
             self.settings = yaml.safe_load(f)
 
     # ------------------------

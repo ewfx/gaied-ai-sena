@@ -18,6 +18,7 @@ class DataGenerator:
     # ------------------------------
     # Configurations
     # ------------------------------
+    project_root = Path(__file__).parent.parent.parent
     BORROWERS = ["ABTB Mid-Atlantic LLC", "XYZ Capital LLC", "Global Investments Inc.","Motion Industries PVT Limited"]
     BANKS = ["Citi Bank NA", "Wells Fargo Bank", "Bank of America", "JP Morgan"]
     LOAN_TYPES = ["Term Loan A-5", "Revolving Credit Facility", "Bridge Loan"]
@@ -25,7 +26,7 @@ class DataGenerator:
     CURRENCY_CHARS = ["USD", "$", "$$"]
 
     def __init__(self):
-        with open("code/src/config/paths.yaml") as f:
+        with open(f"{self.project_root}/src/config/paths.yaml") as f:
             self.paths = yaml.safe_load(f)
             
         self.banks = ["Citi Bank NA", "Wells Fargo", "Bank of America"]

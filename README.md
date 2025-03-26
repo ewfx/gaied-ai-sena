@@ -52,7 +52,7 @@ Reduces manual processing time by 70% while maintaining 95%+ accuracy.
 
 ## 🛠️ Tech Stack
 **Backend**  
-![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
+![Python](https://img.shields.io/badge/Python-3.1%2B-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.103%2B-green) [FUTURE]
 
 **Machine Learning**  
@@ -67,7 +67,7 @@ Reduces manual processing time by 70% while maintaining 95%+ accuracy.
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Python 3.9+
+- Python 3.10+
 - pip 23.0+
 
 ### Installation
@@ -82,6 +82,19 @@ source myenv/bin/activate  # Linux/Mac
 pip install -r requirements.txt
 python -m spacy download en_core_web_lg
 ```
+
+### Usage
+## Generate Training Data --> Annotate Data --> Train 
+- Under code/src/rupper.py --> follow steps in sequence
+
+## Batch Processing 
+```
+python pipelines/main.py \
+  --input_dir data/raw_emails/batch_2023/ \
+  --output_dir data/results/batch_2023/
+```
+* Please use complete path in input_dir(C:\FolderA\FolderB\XXXXXXX)
+
 
 ## 👥 Team
 - **Dwivedi Vishal Sridhar Arya** - [GitHub](#) | [LinkedIn](#)
