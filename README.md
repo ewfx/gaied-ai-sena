@@ -1,4 +1,4 @@
-# 🚀 Project Name
+# 🚀 AISena Email Classifier
 
 ## 📌 Table of Contents
 - [Introduction](#introduction)
@@ -17,11 +17,10 @@
 A brief overview of your project and its purpose. Mention which problem statement are your attempting to solve. Keep it concise and engaging.
 
 ## 🎥 Demo
-🔗 [Live Demo](#) (if applicable)  
-📹 [Video Demo](#) (if applicable)  
-🖼️ Screenshots:
 
-![Screenshot 1](link-to-image)
+### Video Demo present in artifacts/demo folder 
+
+###
 
 # Banking Email Processing AI
 

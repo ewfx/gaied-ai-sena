@@ -10,7 +10,6 @@ import io
 from typing import Dict, List
 import PyPDF2
 from docx import Document
-#from utils.file_handlers import read_eml_file
 
 class EmailParser:
     def parse_email(self, eml_content: bytes) -> Dict:
