@@ -1,0 +1,11 @@
+training:
+  batch_size: 32
+  epochs: 10
+  learning_rate: 0.0001
+  labels: ["loan_approval", "share_adjustment", "other"]
+
+ner:
+  entity_map:
+    loan_approval: ["BORROWER", "LOAN_AMOUNT", "LOAN_ID", "ACCOUNT_NUMBER"]
+    share_adjustment: ["ACCOUNT_NUMBER", "SHARE_VALUE"]
+    other: []

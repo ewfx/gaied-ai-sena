@@ -172,3 +172,9 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+code/src/data/labels/*
+code/src/data/raw_emails/*
+code/src/data/processed/*
+myenv/Scripts/*
+code/src/pipelines/results/*
+code/src/models/*

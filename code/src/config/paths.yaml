@@ -1,0 +1,13 @@
+data:
+  raw: "code/src/data/raw_emails"
+  processed: "code/src/data/processed"
+  labels: "code/src/data/labels"
+  
+models:
+  classifier: "/src/models/classifier"
+  ner: "/src/models/ner"
+
+test:
+  rawmail: "/test/rawfiles"
+
+result: "/results"
