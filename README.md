@@ -25,7 +25,7 @@ A brief overview of your project and its purpose. Mention which problem statemen
 
 # Banking Email Processing AI
 
-[![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org/)
+[![Python 3.1+](https://img.shields.io/badge/python-3.1%2B-blue)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 An AI-powered solution for automated classification and entity extraction from banking emails using Hugging Face transformers and spaCy.
