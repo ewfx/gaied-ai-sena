@@ -3,6 +3,7 @@
 ## 📌 Table of Contents
 - [Introduction](#introduction)
 - [Demo](#demo)
+- [Artifacts](#Artifacts)
 - [Inspiration](#inspiration)
 - [What It Does](#what-it-does)
 - [How We Built It](#how-we-built-it)
@@ -16,11 +17,15 @@
 ## 🎯 Introduction
 A brief overview of your project and its purpose. Mention which problem statement are your attempting to solve. Keep it concise and engaging.
 
-## 🎥 Demo
+## Artifacts
+
+### 🎥 Demo
 
 ### Video Demo present in artifacts/demo folder 
 
-###
+## Architecure 
+
+### Image and mermaid flow present in artifacts/arch folder
 
 # Banking Email Processing AI
 
@@ -37,6 +42,28 @@ Automate processing of banking emails containing:
 
 Reduces manual processing time by 70% while maintaining 95%+ accuracy.
 
+## 🛠️ How We Built It
+
+### Core Technologies
+- **Natural Language Processing**  
+  - `Hugging Face Transformers` (DistilBERT for classification)  
+  - `spaCy` (Custom NER model with rule-based validation)  
+- **Data Processing**  
+  - `PyPDF2` & `python-docx` for attachment parsing  
+  - `email` standard library for .eml processing  
+- **Infrastructure**  
+  - Config-driven pipeline (`paths.yaml` + `settings.yaml`)  
+  - Modular architecture for extensibility  
+
+### Pipeline Architecture
+```plaintext
+Raw Email → Email Parser → Text + Attachments  
+                      ↓              ↓  
+           Classifier (DistilBERT)   Attachment Processor  
+                      ↓              ↓  
+           NER Engine (spaCy) → Combined Results → JSON Output
+```
+
 ## ✨ Features
 - **Dual AI Processing**
   - Primary/Secondary intent classification
@@ -48,6 +75,40 @@ Reduces manual processing time by 70% while maintaining 95%+ accuracy.
   - Config-driven pipelines
   - Rule-based validation
   - Batch processing
+
+## ⚠️ Limitations
+
+### Input Handling
+- **File Formats**  
+  - Only processes `.eml` email files  
+  - Does not support direct PDF/DOCX file input  
+  - Attachment limitations:  
+    - PDFs: <10MB, non-scanned, text-based only  
+    - DOCX: Basic text extraction (no tables/formatting)  
+
+- **Email Constraints**  
+  - ❌ Encrypted emails not supported  
+  - ❌ Nested email chains partially supported (processes latest email only)  
+
+### Model Capabilities
+- **Classification**  
+  - Trained on synthetic laptop-generated data
+  - Limited regional terminology coverage  
+  - Confidence scores not production-calibrated  
+
+### Performance
+- **Hardware Limits**  
+  - CPU-only inference recommended  
+  - Max throughput: 12 emails/minute (on Intel i7-11800H)  
+  - Max email size: 1MB (text + attachments combined)  
+
+- **Language Support**  
+  - English-only processing  
+  - No multilingual support  
+
+### Security
+- ⚠️ No built-in PII redaction  
+- ⚠️ No attachment malware scanning  
 
 ## 🛠️ Tech Stack
 **Backend**  
